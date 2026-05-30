@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { UserPlus, User, ShieldCheck } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { UserPlus, ShieldCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -75,10 +73,10 @@ export default function Register() {
         </div>
 
         {/* 2. Register Form Card */}
-        <Card className="bg-zinc-950/80 backdrop-blur-xl border border-zinc-900/80 rounded-[32px] overflow-hidden shadow-2xl relative">
+        <div className="bg-zinc-950/80 backdrop-blur-xl border border-zinc-900/80 rounded-[32px] overflow-hidden shadow-2xl relative">
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-green-500/50 to-transparent" />
           
-          <CardContent className="p-8 sm:p-10">
+          <div className="p-8 sm:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* Name Input */}
@@ -143,15 +141,14 @@ export default function Register() {
 
               {/* Submit Button */}
               <div className="pt-2">
-                <Button
+                <button
                   type="submit"
-                  variant="primary"
-                  className="w-full py-5 text-base font-extrabold rounded-2xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:shadow-[0_0_30px_rgba(34,197,94,0.2)] transition-all duration-500"
                   disabled={loading}
+                  className="w-full bg-[#00d084] hover:bg-green-600 text-black py-4 text-base font-extrabold rounded-2xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:shadow-[0_0_30px_rgba(34,197,94,0.2)] transition-all duration-500 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
-                      <div className="w-5 h-5 rounded-full border-2 border-zinc-900 border-t-zinc-400 animate-spin" />
+                      <div className="w-5 h-5 rounded-full border-2 border-black border-t-transparent animate-spin" />
                       <span>Creating Account...</span>
                     </>
                   ) : (
@@ -160,7 +157,7 @@ export default function Register() {
                       <span>Sign Up</span>
                     </>
                   )}
-                </Button>
+                </button>
                 
                 <p className="text-center text-zinc-500 mt-6 text-sm">
                   Already have an account?{" "}
@@ -171,8 +168,8 @@ export default function Register() {
               </div>
 
             </form>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
       </div>
     </div>

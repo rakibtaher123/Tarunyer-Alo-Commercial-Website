@@ -91,7 +91,8 @@ export default function Navbar() {
 
           {/* Action Trigger / Join button */}
           <div className="hidden md:flex">
-            <Link href="/contact">
+            {/* Changed from /contact to /register */}
+            <Link href="/register">
               <Button variant="primary" size="sm" className="rounded-xl">
                 Join Now
               </Button>
@@ -136,7 +137,8 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <Link href="/contact" className="mt-2">
+          {/* Changed from /contact to /register for mobile menu */}
+          <Link href="/register" className="mt-2">
             <Button variant="primary" className="w-full py-3.5 rounded-xl">
               Join Now
             </Button>
